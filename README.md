@@ -1,7 +1,7 @@
 # Poser CR2 File Specification
 Collection of unofficial poser cr2 file format specification documents saved from the old web
 
-![wireframestatus](https://github.com/discatte/poser_cr2_file_specification/raw/main/Tutorials.jpg) ![kuroyumelogo](https://github.com/discatte/poser_cr2_file_specification/raw/main/DevelopmentZone.gif)
+![site logos](https://github.com/discatte/poser_cr2_file_specification/raw/main/logos.png)
 
 ### Kuroyume's Poser Unofficial CR2 File Specification
 
