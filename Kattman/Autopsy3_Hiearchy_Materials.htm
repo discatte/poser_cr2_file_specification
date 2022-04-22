@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff>
+<P>
+I am going to cover both the heiarchy and the materials together in this
+part because they are both fairly short.  The materials are also part of the
+same section as the hiearchy itself so should be included here.
+</P>
+<P>
+Before Poser 4, if you wanted to create a new figure, you hade to create a
+hiearchy file for poser to import in order to set up all the different
+parts.  This is no longer necessary with the hiearchy editor in poser 4.
+Just dragging body parts under the other really sets tis up nicely and
+generates the figure section with ease.
+</P>
+<P>
+First I will list the first part of the figure section which is the hiearchy
+itself.
+</P>
+<P>
+figure
+<BR>
+ {
+<BR>
+<blockquote>
+ name    FigureName
+<BR>
+ root    BODY:1
+<BR>
+ addChild    BodyPart:1
+<BR>
+    BODY:1
+<BR>
+ defaultPick BodyPart:1
+<BR>
+ displayOn 1
+<BR>
+ weld    BodyPart:1
+<BR>
+    BodyPart:1
+<BR>
+ allowsBending 1
+<BR>
+ figureType 1318
+<BR>
+ origFigureType 1318
+<BR>
+ canonType 8
+<BR>
+ conforming 0
+</blockquote>
+</P>
+<P>
+As you can see, this is where you would name your figure, give it something
+unique so all references will know what they are supposed to read.  Next you
+need the ROOT of your figure.  Recall I mentioned before that all parts can
+only have one parent, because of this, there will only be one topmost joint
+and all figures have a body so that is the root.  After that you add each
+part in it's proper order with the addchild parameter.  With addChild you
+need to list the part you are adding, then under that you need to add it's
+parent, remember you cannot add a child to more then one parent.
+</P>
+<P>
+DefaultPick is used to say what will be the body part picked when you select
+the character first.  Usually this is the hip as that is the centerpoint for
+most actions.
+</P>
+<P>
+I'm not sure what displyOn will do.  It sounds like it should hidfe the
+figure from view but that is the job of the hidden parameter, so I don't
+really know.  After that, you need to start telling poser what parts are
+welded together.  Usually you will weld every part to it's parent but not
+always.  Think of a person and imagine what would happen if that persons
+arms could just fly off his body.  If you don't  weld the arm to the
+shoulder this will happen (ok put down the blowtorch and untie the cat).
+the allowsBending parameter also works with the bend dial to decide if the
+entire body can warp when parts are moved.
+</P>
+<P>
+The next two parameters are obviously related and apparently tell poser what
+to work with, but I have never seen values other then the ones displayed.
+They might have been thinking of using multiple string tables for body part
+and translation strings for things like people and animals but realized that
+it wasn't necesary.  The next parameter canonType is a strange one also and
+I haven't been able to figure it out.
+</P>
+<P>
+Have fun with conforming, set it to 1 for a conformaing figure.  easy enough
+to explain I guess.
+</P>
+<P>
+Next comes the material mapping and I will list it here though the
+explainations will be very brief because of the nature of this section.
+</P>
+<P>
+<blockquote>
+material BodyPart
+<BR>
+  {
+<BR>
+<blockquote>
+  KdColor 1 1 1 1
+<BR>
+  KaColor 0 0 0 1
+<BR>
+  KsColor 0.6 0.6 0.6 1
+<BR>
+  TextureColor 0.8 0.8 0.8 1
+<BR>
+  NsExponent 10
+<BR>
+  tMin 0
+<BR>
+  tMax 0
+<BR>
+  tExpo 0
+<BR>
+  bumpStrength 1
+<BR>
+  ksIgnoreTexture 0
+<BR>
+  reflectThruLights 0
+<BR>
+  reflectThruKd 0
+<BR>
+  textureMap NO_MAP
+<BR>
+  bumpMap NO_MAP
+<BR>
+  reflectionMap NO_MAP
+<BR>
+  transparencyMap NO_MAP
+<BR>
+  ReflectionColor 0 0 0 1
+<BR>
+  reflectionStrength 0
+<BR>
+</blockquote>
+  }
+<BR>
+ displayMode USEPARENT
+<BR>
+ locked 0
+<BR>
+</blockquote>
+ }
+<BR>
+ setGeomHandlerOffset 0 0.3487 0
+</P>
+<P>
+Essentially you need to define the proper material part then set all of it's
+colors.  Looking through the list and thinking of the material mapping
+screen I am sure most people can figure out what the parameters are.  One
+thing I will mention about this section though is the material maps.  You
+will notice in this listing I have the default value (NO_MAP).  If you have
+a texture map applied it will be listed in texture map with the poser
+standard for path:filename.  If you have a problem with poser asking you for
+the location of the texture maps you can locate them and add the proper path
+to this setting.  Keep in mind that when doing so you have to adhere to the
+poser rules that are based off of macintosh rules.  In other words,
+capitalization counts.
+</P>
+<P>
+I hope this gave people an insite as to what happens inside a poser file.
+You can use this information to look in any of the other poser files such as
+hair and props and understand what is going on inside of them.
+
+</BODY>
+</HTML>

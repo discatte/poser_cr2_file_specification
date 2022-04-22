@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff>
+<P>
+I'm going to run down the CR2 format in the way you would expect to see it
+within a text editor.  The first section is the Geometry.
+</P>
+<P>
+The Geometry is actually the second section in the CR2 format.  The first is
+actually the version info and really shouldn't be removed or changed.  This
+leaves the geometry section as the first section you can play with.
+</P>
+<P>
+There are two different formats for this section.  The first format we will
+deal with is custom geometry.  In custom geometry each and every body part
+should be defined, this includes the BODY that you will find in the poser
+menues.  The BODY usually has no geometry of it's own as it is the top level
+piece that contains all other parts.  Following the BODY entry will be
+entries for each body part (in OBJ syntax this is a group).  The body part
+syntax will be like this:
+</P>
+<P>
+actor Partname:1 (the number is the character number and should be the same
+in all parts)
+<BR>
+    {
+<BR>
+<blockquote>
+    geomCustom
+<BR>
+        {
+<BR>
+<blockquote>
+        (here will be a listing of all vertices, faces, and even texture
+groups for each part in OBJ format)
+<BR>
+</blockquote>
+        }
+<BR>
+</blockquote>
+    }
+</P>
+<P>
+Each and every body part will be listed.  If you have custom geometry in
+your file, it is probably responsible for about 90% of it's size.
+</P>
+<P>
+The second option is to have a geometry reference file (OBJ file) that
+contains the geometry.  This option has a lot of advantages over custom
+geometry.  The first of which is if you need to make any changes to the mesh
+all you would have to do is change the geometry file itself and all your
+joints remain in thier original settings.  The one thing to remember when
+modifying and OBJ geometry is that all body part names need to remain the
+same.  If you are adding a new part name then you will need a new CR2 file
+to go with it.  The format for this option is simple and I will list it
+here:
+</P>
+<P>
+figureResFile :Path:Filename.OBJ
+<BR>
+Actor Body:1
+<BR>
+    {
+<BR>
+    }
+<BR>
+actor Partname:1
+<BR>
+    {
+<BR>
+<blockquote>
+    storageOffset 0 0 0
+<BR>
+    geomHandlerGeom 13 groupname
+<BR>
+</blockquote>
+    }
+<BR>
+figureResFile :Path:Filename.OBJ
+</P>
+<P>
+</P>
+<P>
+The reference option opens and closes with a pointer to the actual OBJ file.
+The syntax for the path will usually start with :Runtime and list the full
+path to the file from there.  This needs to follow the Mac format for paths
+which state that subfolders are separated by a colon (:) and all
+capitalization matters (ape is not equal to Ape).  The body definition is
+the same as with custom geometry.
+</P>
+<P>
+When we get to the different body parts, we now no longer have the geometry
+listed, but we still need to link the group names in the OBJ file to the
+body part names in Poser.  The Partname listing shows the name of the body
+part as displayed by poser*.  The geomHandlerGeom 13 groupname should
+exactly match the group name within the OBJ file.  This tells Poser which
+group to use for the defined body part.  The storage offset is the units in
+cartesian coordinates (that's the 3 dimensional measuring system XYZ) that
+the geometry should be moved from it's default location in the OBJ file.
+The storage offset for most models is always 0 0 0, this keeps the groups in
+the same relative location as when they were modelled.
+</P>
+<P>
+If you want the extended capabilities that having an OBJ reference gives you
+but your CR2 file has the geometry listed in its custom geometry format what
+do you do?  Actually this has an easy. if tedious, solution, and I will
+explain it without use of other tools.
+</P>
+<P>
+First thing to do is back up the files then load the figure into poser and
+then go to the menu and restore the figure.  What this will do is take away
+any modifications the CR2 file put into place**.  Then export this figure as
+an object file.  During export, select every option with the exception of
+"As Morph Target" and give it a unique name.  Go ahead and exit out of poser
+because poser will maintain a lock on the CR2 file and you won't be able to
+edit it.  Once out, open the CR2 file in any text editor that can handle
+large files.  I tend to use Wordpad.  Look for the first Partname and select
+all partname info in the geometry area and delete it, be sure to make note
+of the different partnames though.  Next add the reference to the OBJ file
+and the partname/OBJ cross reference following the syntax listed above.  You
+may need to take a peek into the OBJ file to see the group names as saved in
+poser.  Once all names are matched up, save the CR2 file, go back to poser
+and load the figure and test it out.
+</P>
+<P>
+</P>
+<P>
+Footnotes:
+</P>
+<P>
+*This is not entirely true as the partnames can be changed in a later
+section
+</P>
+<P>
+**This also is not true as there can be a defualt starting modification that
+is saved when you restore the figure.  If you want to export a figure with
+some of these, you need to make a backup of the CR2 and set all those
+starting values to 0 before loading it back into poser and exporting.  These
+cases will be explained within thier sections.
+</P>
+</BODY>
+</HTML>

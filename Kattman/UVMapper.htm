@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff >
+This tutorial deals with 
+<A href="http://www.uvmapper.com">UVMapper Classic</A>
+     .
+
+<XMP>UVMapper is one of those applications that has become a necessity in
+my battery of tools.  Without that little utility, there is no way I could
+put out the models I do.  Only one problem with UVMapper, the documentation.
+Let's see if I can clear thing up a little.
+
+When importing a new OBJ file that has no UVMapping at all, you will receive
+a screen full of randomly placed vertex lines.  To get a feel for the views
+as related to poser do these things:
+
+Go to Edit-New UV Map-Planer.  Select no gaps, don't split, scale result and
+use the Z-axis for the view.  After saying OK you will see a somewhat decent
+representation of the object.  Now the question will be, "What direction are
+we looking at this from?"  The z-axis relates to the front as viewed from
+Poser.  The axis views are as follows:
+
+z-axis = Poser front
+y-axis = Poser Bottom
+x-axis =  Poser
+
+Left So how do you get a top or right hand  view? This requires a
+little  thinking. Go back to the menu and select  Edit-Rotate. You will see a
+small dialog box with three areas to put in the degree of  rotation. You can
+only enter integers and either positive or  negative. When rotating an OBJ,
+the rotation always happens from the default 0, not from it's current
+rotation. For example, if you rotate something 10 degrees then go back and rotate
+it with a value of 5 degrees in the same axis, the total rotation will be 5
+not
+
+15. Now how do you know what direction to  rotate? Look back at the
+viewing  direction. If you rotate on the Y axis, the rotation will go in a
+clockwise direction as seen from the  bottom. Following this the z-axis will
+rotate from the front in a clockwise direction
+
+also. When combining rotations on two axis, you may receive unexpected
+results. This is due to the fact that rotations will always happen at one  time.
+When rotating along three axis at once sometimes there is no way to know
+where the object will end  up. My recommendation is to use as few rotations
+as possible to achieve the results you
+
+want. Just a few other quick items for this short tutorial/explanation  thing.
+Go back to the menu and select  Edit-Select. You will see a few items on
+this  list. The one I have found more helpful is the select by  group. This
+will allow you to grab just a piece of the model as defined by the current
+groups in the OBJ  file. Once you have it selected, you can use the rotate and
+New UV Map menus on just the selected
+
+piece. Remember back at the beginning of this I mentioned using the Scale
+Result  option. I find this extremely important to prevent stretching of a
+texture  map. This option will size the selection with the same relative
+dimensions as the OBJ  file. Keep in mind, I also said use No  Gaps. This will keep
+the selection tight against the geometry of the
+
+object. Now usually, the resulting mapping will be fairly  small. If  you attempt
+to resize the selection using the mouse you will once again see stretching
+of the texture map as you won't be keeping with the relative dimensions of
+the  model. To prevent this always resize using the + and - keys on the
+keypad. The number keys will move a model around and real fine increments
+for precision in placing the UVs where you want
+
+them. In preparation for final poser mapping, you will want to define the
+textures and  groups. Go back to the menu and select  Edit-Assign. This will show
+you a couple fo different  options. The only ones relative to poser are
+Group and  Texture. As a rule I always split my textures  first. If your model
+is made with all the different texture and group pieces as separate groups
+this becomes an easy but tedious  task. Just select a group and assign it
+a texture  first. Once all your textures are assigned then go back and
+select the proper groups and re-group them in their proper
+
+groups. For example, I have an box like object I want to be a  TV. I model it
+so that the control panel, screen and body are three separate  pieces. I UV
+map them the way I want and now need to get the proper textures and groups
+set. I will select the screen object and set the texture group to  screen. I
+do the same for the control panel and  body. After setting the textures I
+then go back and select all the objects and set then to the group  "TV". If I
+had set the group first, I would not have been able to go back and select
+the different parts and set their texture
+
+easily. After all of this, you will need to save the new model and texture
+template. Save the model  first. Go to File-Save  model. The options I always use
+are Export normals, Export UV Coordinates, Export Materials and Export
+UVMapper  Regions. Easy enough, and you can guess why yourself by this
+
+point. To save the texture map go to File-Save Texture  Map. This will give you
+a dialog box asking for size and a few  parameters. The only parameter I
+use is Exclude Hidden  Facets. This allows me to have the map look as
+it currently does on screen if I had to hide faces I didn't want to have
+show  up. The size of the map is kind of
+
+funny. After all this work to get things to look right and using the Scale
+Result when creating the template, UVMapper does nothing for you in determining
+the final dimensions of the  image. Chances are, if you save with the
+default size, the texture map will once again get  stretched. My trick here is
+in knowing the relative dimensions of UVMappers workspace on my screen.
+Running at 1024x756, the workspace is 1029x709.  This is my starting point
+for the save size.  If I want a real high-resolution map I will multiply both
+dimensions by either 2, 3 or 4. I
+
+hope this gets you started.  Play around with some of the other mapping
+options besides planer and you will be able to create a template for
+anything you want.</XMP>
+</BODY>
+</HTML>

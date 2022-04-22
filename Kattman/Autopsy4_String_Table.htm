@@ -1,0 +1,349 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff>
+Back in part 2 you saw a lot of references for string tables and a few
+esoteric numbers.  Well here are the numbers that should go in each section
+and what they mean:
+<BR>
+<BR>
+For all dials the GetStringRes should be set to (1028,X)
+X will be any number pulled from this list:
+<BR>
+<BR>
+<TABLE WIDTH=200 CELLPADDING="0" CELLSPACING="0" BORDER="0">
+<TR><TD>
+1</TD><TD>Taper
+</TD></TR><TR><TD>
+2</TD><TD>Twist
+</TD></TR><TR><TD>
+3</TD><TD>Side-Side
+</TD></TR><TR><TD>
+4</TD><TD>Bend
+</TD></TR><TR><TD>
+5</TD><TD>Scale
+</TD></TR><TR><TD>
+6</TD><TD>xScale
+</TD></TR><TR><TD>
+7</TD><TD>yScale
+</TD></TR><TR><TD>
+8</TD><TD>zScale
+</TD></TR><TR><TD>
+9</TD><TD>xRotate
+</TD></TR><TR><TD>
+10</TD><TD>yRotate
+</TD></TR><TR><TD>
+11</TD><TD>zRotate
+</TD></TR><TR><TD>
+12</TD><TD>xTrans
+</TD></TR><TR><TD>
+13</TD><TD>yTrans
+</TD></TR><TR><TD>
+14</TD><TD>zTrans
+</TD></TR><TR><TD>
+15</TD><TD>Focal
+</TD></TR><TR><TD>
+16</TD><TD>Pitch
+</TD></TR><TR><TD>
+17</TD><TD>Yaw
+</TD></TR><TR><TD>
+18</TD><TD>Roll
+</TD></TR><TR><TD>
+19</TD><TD>Red
+</TD></TR><TR><TD>
+20</TD><TD>Green
+</TD></TR><TR><TD>
+21</TD><TD>Blue
+</TD></TR><TR><TD>
+22</TD><TD>Intensity
+</TD></TR><TR><TD>
+23</TD><TD>Turn
+</TD></TR><TR><TD>
+24</TD><TD>Front-Back
+</TD></TR><TR><TD>
+25</TD><TD>Dollyx
+</TD></TR><TR><TD>
+26</TD><TD>Dollyy
+</TD></TR><TR><TD>
+27</TD><TD>Dollyz
+</TD></TR><TR><TD>
+28</TD><TD>Shadow
+</TD></TR><TR><TD>
+29</TD><TD>Map Size
+</TD></TR><TR><TD>
+30</TD><TD>Panx
+</TD></TR><TR><TD>
+31</TD><TD>Pany
+</TD></TR><TR><TD>
+32</TD><TD>Zoom
+</TD></TR><TR><TD>
+33</TD><TD>xTranB
+</TD></TR><TR><TD>
+34</TD><TD>yTranB
+</TD></TR><TR><TD>
+35</TD><TD>zTranB
+</TD></TR><TR><TD>
+36</TD><TD>xOffset
+</TD></TR><TR><TD>
+37</TD><TD>yOffset
+</TD></TR><TR><TD>
+38</TD><TD>zOffset
+</TD></TR><TR><TD>
+39</TD><TD>xOrbit
+</TD></TR><TR><TD>
+40</TD><TD>yOrbit
+</TD></TR><TR><TD>
+41</TD><TD>zOrbit
+</TD></TR><TR><TD>
+42</TD><TD>Hand Type
+</TD></TR><TR><TD>
+43</TD><TD>BreastSize
+</TD></TR><TR><TD>
+44</TD><TD>OriginX
+</TD></TR><TR><TD>
+45</TD><TD>OriginY
+</TD></TR><TR><TD>
+46</TD><TD>OriginZ
+</TD></TR><TR><TD>
+47</TD><TD>Fatness
+</TD></TR><TR><TD>
+48</TD><TD>Grasp
+</TD></TR><TR><TD>
+49</TD><TD>Thumb Grasp
+</TD></TR><TR><TD>
+50</TD><TD>Spread
+</TD></TR><TR><TD>
+51</TD><TD>Curve
+</TD></TR><TR><TD>
+52</TD><TD>curve
+</TD></TR><TR><TD>
+53</TD><TD>Up-Down
+</TD></TR></Table>
+<BR>
+<BR>
+For all body parts the GetStringRes should be set to (1024,X).  You may find
+it interesting to see what the poser programmers have actually accounted for
+then wonder why you never see them used in a single model.
+X will be any number pulled from this list:
+<BR>
+<BR>
+<TABLE WIDTH=200 CELLPADDING="0" CELLSPACING="0" BORDER="0">
+<TR>
+<TD>
+1</TD><TD> Body
+</TD></TR><TR><TD>
+2</TD><TD> Head
+</TD></TR><TR><TD>
+3</TD><TD> Neck
+</TD></TR><TR><TD>
+</TD></TR><TR><TD>
+4</TD><TD> Chest
+</TD></TR><TR><TD>
+5</TD><TD> Abdomen
+</TD></TR><TR><TD>
+6</TD><TD> Hip
+</TD></TR><TR><TD>
+7</TD><TD> Left Thigh
+</TD></TR><TR><TD>
+8</TD><TD> Left Shin
+</TD></TR><TR><TD>
+9</TD><TD> Left Foot
+</TD></TR><TR><TD>
+10</TD><TD>Right Thigh
+</TD></TR><TR><TD>
+11</TD><TD>Right Shin
+</TD></TR><TR><TD>
+12</TD><TD>Right Foot
+</TD></TR><TR><TD>
+13</TD><TD>Left Shoulder
+</TD></TR><TR><TD>
+14</TD><TD>Left Forearm
+</TD></TR><TR><TD>
+15</TD><TD>Left Hand
+</TD></TR><TR><TD>
+16</TD><TD>Right Shoulder
+</TD></TR><TR><TD>
+17</TD><TD>Right Forearm
+</TD></TR><TR><TD>
+18</TD><TD>Right Hand
+</TD></TR><TR><TD>
+19</TD><TD>Left Collar
+</TD></TR><TR><TD>
+20</TD><TD>Right Collar
+</TD></TR><TR><TD>
+21</TD><TD>Jaw
+</TD></TR><TR><TD>
+22</TD><TD>Left Pinky 1
+</TD></TR><TR><TD>
+23</TD><TD>Left Pinky 2
+</TD></TR><TR><TD>
+24</TD><TD>Left Pinky 3
+</TD></TR><TR><TD>
+25</TD><TD>Right Pinky 1
+</TD></TR><TR><TD>
+26</TD><TD>Right Pinky 2
+</TD></TR><TR><TD>
+27</TD><TD>Right Pinky 3
+</TD></TR><TR><TD>
+28</TD><TD>Left Ring 1
+</TD></TR><TR><TD>
+29</TD><TD>Left Ring 2
+</TD></TR><TR><TD>
+30</TD><TD>Left Ring 3
+</TD></TR><TR><TD>
+31</TD><TD>Right Ring 1
+</TD></TR><TR><TD>
+32</TD><TD>Right Ring 2
+</TD></TR><TR><TD>
+33</TD><TD>Right Ring 3
+</TD></TR><TR><TD>
+34</TD><TD>Left Mid 1
+</TD></TR><TR><TD>
+35</TD><TD>Left Mid 2
+</TD></TR><TR><TD>
+36</TD><TD>Left Mid 3
+</TD></TR><TR><TD>
+37</TD><TD>Right Mid 1
+</TD></TR><TR><TD>
+38</TD><TD>Right Mid 2
+</TD></TR><TR><TD>
+39</TD><TD>Right Mid 3
+</TD></TR><TR><TD>
+40</TD><TD>Left Index 1
+</TD></TR><TR><TD>
+41</TD><TD>Left Index 2
+</TD></TR><TR><TD>
+42</TD><TD>Left Index 3
+</TD></TR><TR><TD>
+43</TD><TD>Right Index 1
+</TD></TR><TR><TD>
+44</TD><TD>Right Index 2
+</TD></TR><TR><TD>
+45</TD><TD>Right Index 3
+</TD></TR><TR><TD>
+46</TD><TD>Left Thumb 1
+</TD></TR><TR><TD>
+47</TD><TD>Left Thumb 2
+</TD></TR><TR><TD>
+48</TD><TD>Left Thumb 3
+</TD></TR><TR><TD>
+49</TD><TD>Right Thumb 1
+</TD></TR><TR><TD>
+50</TD><TD>Right Thumb 2
+</TD></TR><TR><TD>
+51</TD><TD>Right Thumb 3
+</TD></TR><TR><TD>
+52</TD><TD>Left Toe
+</TD></TR><TR><TD>
+53</TD><TD>Right Toe
+</TD></TR><TR><TD>
+54</TD><TD>Neck 1
+</TD></TR><TR><TD>
+55</TD><TD>Neck 2
+</TD></TR><TR><TD>
+56</TD><TD>Right Finger 1
+</TD></TR><TR><TD>
+57</TD><TD>Right Claw 1
+</TD></TR><TR><TD>
+58</TD><TD>Right Finger 2
+</TD></TR><TR><TD>
+59</TD><TD>Right Claw 2
+</TD></TR><TR><TD>
+60</TD><TD>Right Finger 3
+</TD></TR><TR><TD>
+61</TD><TD>Right Claw 3
+</TD></TR><TR><TD>
+62</TD><TD>Left Finger 1
+</TD></TR><TR><TD>
+63</TD><TD>Left Claw 1
+</TD></TR><TR><TD>
+64</TD><TD>Left Finger 2
+</TD></TR><TR><TD>
+65</TD><TD>Left Claw 2
+</TD></TR><TR><TD>
+66</TD><TD>Left Finger 3
+</TD></TR><TR><TD>
+67</TD><TD>Left Claw 3
+</TD></TR><TR><TD>
+68</TD><TD>Right Toe 1
+</TD></TR><TR><TD>
+69</TD><TD>Right Toe 2
+</TD></TR><TR><TD>
+70</TD><TD>Left Toe 1
+</TD></TR><TR><TD>
+71</TD><TD>Left Toe 2
+</TD></TR><TR><TD>
+72</TD><TD>Tail 1
+</TD></TR><TR><TD>
+73</TD><TD>Tail 2
+</TD></TR><TR><TD>
+74</TD><TD>Tail 3
+</TD></TR><TR><TD>
+75</TD><TD>Tail 4
+</TD></TR><TR><TD>
+76</TD><TD>Left Up Arm
+</TD></TR><TR><TD>
+77</TD><TD>Right Up Arm
+</TD></TR><TR><TD>
+78</TD><TD>Left Wrist
+</TD></TR><TR><TD>
+79</TD><TD>Right Wrist
+</TD></TR><TR><TD>
+80</TD><TD>Lower Neck
+</TD></TR><TR><TD>
+81</TD><TD>Upper Neck
+</TD></TR><TR><TD>
+82</TD><TD>Left Leg
+</TD></TR><TR><TD>
+83</TD><TD>Right Leg
+</TD></TR><TR><TD>
+84</TD><TD>Left Ankle
+</TD></TR><TR><TD>
+85</TD><TD>Right Ankle
+</TD></TR><TR><TD>
+86</TD><TD>Waist
+</TD></TR><TR><TD>
+87</TD><TD>Left Ear 1
+</TD></TR><TR><TD>
+88</TD><TD>Right Ear 1
+</TD></TR><TR><TD>
+89</TD><TD>Left Ear 2
+</TD></TR><TR><TD>
+90</TD><TD>Right Ear 2
+</TD></TR><TR><TD>
+91</TD><TD>Left Ear 3
+</TD></TR><TR><TD>
+92</TD><TD>Right Ear 3
+</TD></TR><TR><TD>
+93</TD><TD>Tail Fins
+</TD></TR><TR><TD>
+94</TD><TD>Right Pect Fin
+</TD></TR><TR><TD>
+95</TD><TD>Left Pect Fin
+</TD></TR><TR><TD>
+96</TD><TD>Body 1
+</TD></TR><TR><TD>
+97</TD><TD>Body 2
+</TD></TR><TR><TD>
+98</TD><TD>Body 3
+</TD></TR><TR><TD>
+99</TD><TD>Body 4
+</TD></TR><TR><TD>
+100</TD><TD>Body 5
+</TD></TR><TR><TD>
+101</TD><TD>Left Eye
+</TD></TR><TR><TD>
+102</TD><TD>Right Eye
+</TD></TR><TR><TD>
+103</TD><TD>innerMatSphere
+</TD></TR><TR><TD>
+104</TD><TD>outerMatSphere
+</TD></TR><TR><TD>
+105</TD><TD>nullMatSphere
+</TD>
+</TR>
+</Table>
+</BODY>
+</HTML>

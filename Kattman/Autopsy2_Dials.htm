@@ -1,0 +1,413 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff>
+<P>
+This is part 2 of the CR2 Autopsy and we will be dealing with all those neat
+dials you find in poser and how they are modified and what effects they can have.
+</P>
+<P>
+The first section is the body part definition itself the format is listed
+below:
+</P>
+<P>
+actor BodyPart:1
+<BR>
+ {
+<BR>
+<blockquote>
+ name    GetStringRes(1024,1)
+<BR>
+ off
+<BR>
+ bend 1
+<BR>
+ dynamicsLock 1
+<BR>
+ hidden 0
+<BR>
+ addToMenu 1
+<BR>
+ castsShadow 1
+<BR>
+ includeInDepthCue 1
+<BR>
+ parent UNIVERSE
+<BR>
+ alternateGeom Name
+<BR>
+  {
+<BR>
+  }
+<BR>
+ channels
+<BR>
+  {
+<BR>
+  }
+<BR>
+ endPoint 0 0.404 -0.06
+<BR>
+ origin 0 0 -0.06
+<BR>
+ orientation 0 0 0
+<BR>
+ displayOrigin 0
+<BR>
+ displayMode USEPARENT
+<BR>
+ customMaterial 0
+<BR>
+ locked 0
+<BR>
+</blockquote>
+ }
+</P>
+<P>
+</P>
+<P>
+To begin with I am just going to describe the main part definitions.  The
+sub sections for alternateGeom and channels will be described later.
+</P>
+<P>
+The first step in describing a body part is of course telling poser what
+part you are working with.  This is done with the actor keyword.  The name following it
+should reference the poser name of the body part as listed in the previous section already
+explained.  After poser knows what part we are working with we can describe the details.
+</P>
+<P>
+The name parameter is the name you will see in the poser interface.  In this
+example you see the name given as GetStringRes(1024,1).  This tells poser to use an internal
+name string set for the local language.  You can just type a name here instead of the
+GetStringRes() pointer but if you do so then anyone using a language other then yours will always
+see the name you typed.  If you want your figures to be compatable with all languages poser
+is released in use the string resource.  The resource cross reference will be given in a
+later section of the autopsy.
+</P>
+<P>
+The off parameter is still a mystery to me, I have no idea why it is there
+or what the other options may be.
+</P>
+<P>
+The bend parameter is a neat little thing.  This tells poser if it sould
+bend the part as you move it.  Essentially human and animal figures should bend but not
+mechanical parts. You want the skin to move around a joint but you don't want the axel of a
+wheel warping out of shape when you turn the wheel itself.
+</P>
+<P>
+The dynamicslock is still something of a mystery to me but I understand that
+the poser guys were thinking of saving animation info within CR2 files at one time.  This
+may be the reason it is here.
+</P>
+<P>
+The hidden parameter is exactly what it says, if you mark this with a 1 then
+the part is hidden from view, with a 0 it will show up and be rendered.
+</P>
+<P>
+The addToMenu parameter tells poser if the body part should be listed in the
+body part menu.
+</P>
+<P>
+ Once again this is a 1 or 0 setting.
+</P>
+<P>
+The castShadow parameter is also a 1 or 0 as are most settings.  This
+basically states if a body part will cast shadows from lights.
+</P>
+<P>
+The includeInDepthCue is a strange one.  It does very little in the poser
+interface and does nothing for the character itself.  If you set your poser preview window to
+shade by depth cue then any part marked with a 0 will not show up in that view.  This is
+the only thing this parameter affects.
+</P>
+<P>
+The parent parameter is an important one.  This tells poser what the body
+parts parent is.  All parts need a parent and here you see it set as universe.  This basically
+says it is the topmost part in the character heiarchy.  All other body parts should list
+the true nae of the parent as listed in the heiarchy,
+</P>
+<P>
+The alternateGeom and channels we will go over shortly.
+</P>
+<P>
+The next set of parameters are very important to anyone looking to create
+thier own figure.  These effect exactly how the part will move when the dials are turned.  The
+endpoint and origin work together to describe the extent of the part.  The origin is the
+center of rotation for all translations and the endpoint is used to effect sperical
+blend zones.
+</P>
+<P>
+Usually these two settings are used to calculate the orientation parameter
+and can be set in the joint setup window in poser.  this basically states what relative angle
+the part is sitting at.  If you have something sticking straight out to the side, the
+orientation will usually be 0 0 0.  This is in cartesian coordinates like all poser
+parameters needing a definition in 3D space.
+</P>
+<P>
+Have you ever seen figures that had green crosses sitting on them for some
+strange reason?  Those crosses are the origin point and those figures have the
+displyOriginPoint parameter set to 1.  If you want to turn them off permanantly just set this to 0 in
+the CR2.
+</P>
+<P>
+The displayMode will define what kind of preview will be used for this
+part.  In poser you can set your preview window to something like cartoon or hidden line or
+whatever.  I recommend this setting always be set to parent so that the interface can
+change this when needed.  If you want it set to something else, well I suspect you can change
+it here but I have no idea what the values should be.
+</P>
+<P>
+Next comes customMaterial and Locked.  I have never seen the customMaterial
+paramter set to one so I don't really know what to do if it is set that way.  The locked
+parameter is the same thing as locking a body part in poser.  This keeps the part fixed in
+it's position when you are trying to move another piece of the figure.
+</P>
+<P>
+OK, lets get into the meat of the part definitions.  The first section is
+the alternateGeom setting.  The only real purpose of this is to turn genitals on and off.  The
+definition of this is as follows:
+</P>
+<P>
+ alternateGeom Hip_1
+<BR>
+  {
+<BR>
+<blockquote>
+  name Genitals Off
+<BR>
+  objFile 20 blHipNoGen.obj
+<BR>
+</blockquote>
+  }
+</P>
+<P>
+</P>
+<P>
+Basically what this is saying is that when you turn the genitals off in the
+interface poser will swap out the defined body part with the new geometry
+listed in the objFile parameter.
+</P>
+<P>
+Now let's get into what you all want to read.  The channels themselves are
+the dials you see in poser.  The format for channels is like this:
+</P>
+<P>
+ channels
+<BR>
+  {
+<BR>
+<blockquote>
+  type internalname
+<BR>
+   {
+<BR>
+<blockquote>
+   name heroHip
+<BR>
+   initValue 0
+<BR>
+   hidden 0
+<BR>
+   forceLimits 4
+<BR>
+   min -100000
+<BR>
+   max 100000
+<BR>
+   trackingScale 0.001
+<BR>
+   keys
+<BR>
+    {
+<BR>
+<blockquote>
+    static  0
+<BR>
+    k  0  0
+<BR>
+</blockquote>
+    }
+<BR>
+   interpStyleLocked 0
+<BR>
+   smoothZones 0.222367 0.263137 99 100
+<BR>
+   angles 45 -45 -135 135
+<BR>
+   otherActor Bodypart:1
+<BR>
+   matrixActor NULL
+<BR>
+   center 0 0.19 -0.22
+<BR>
+   startPt 0.361332
+<BR>
+   endPt 0.002104
+<BR>
+   flipped
+<BR>
+   calcWeights
+<BR>
+   doBulge 0
+<BR>
+   jointMult 1
+<BR>
+   valueOpDeltaAdd
+<BR>
+    Figure 1
+<BR>
+    BODY:1
+<BR>
+    SuperHero
+<BR>
+   deltaAddDelta 1.000000
+<BR>
+   indexes 723
+<BR>
+   numbDeltas 945
+<BR>
+   deltas
+<BR>
+    {
+<BR>
+<blockquote>
+    d 5 0 0 -2.00048e-006
+<BR>
+    And onwards...
+<BR>
+</blockquote>
+    }
+<BR>
+</blockquote>
+   }
+<BR>
+</blockquote>
+  }
+</P>
+<P>
+</P>
+<P>
+To start with, every channel needs a name for poser to reference and also
+what kind of parameter this is.  The type can be one of three.  These three
+types are; valueParm, targetGeom or one of many predefined rotations or
+translations.  The type should be followed by a name that poser will use to
+reference this channel.  valueParm is a custom dial while targetGeom is a
+morph target. Channels have a lot of parameters that are similiar to the
+body parts themselves and those parameters work in exactly the same fashion.
+With this in mind I will only go over the new parameters.
+</P>
+<P>
+The initValue parameter is a numeric value.  This relates to the number you
+see next to all dials.  the initValue states what the setting will be when
+the figure is first loaded.  This is different from it's restored value
+which will be seen later.
+</P>
+<P>
+The forceLimits setting have a couple of different values that can be used.
+These values are 0, 1, or 4.  A setting of 0 says to not use any limits on
+this joint as a setting of 1 says to use limits.  These two values are
+overridden by the poser interface.  A setting of 4 is never overridden by
+the poser interface and will always use the limits described in the min and
+max settings.  The min and max settings just tell poser what the smallest
+and largest values are for that dial when limits are set on.
+</P>
+<P>
+While we are talking about the values of dials itself it comes as no
+surprise that the next setting is trackingScale.  This setting tells poser
+how much to increase or decrease the dial by when it is turned.  If it is
+set to 0.001 you have very fine control over this dial as opposed to a
+setting of 1.  Let's say you start at 0 and turn this dial, with a setting
+of 1 you will see it only jump through real numbers such as 1, 2, 3, etc.
+</P>
+<P>
+Next comes another sub section.  Wow the joints have a lot of sub-sections
+don't they.  The keys section is very sall and only half of it is currently
+used.  The k value can set the restored value for this dial.  If you have
+ever tried to restore a figure and noticed that what you got was something
+completly different from what you originally loaded then the k value was not
+set.  My recommendation here is to set the second value of this to equal the
+initValue of this dial.  This way of someone restores the figure, expecting
+to get the default pose back, they will get what they started with.
+</P>
+<P>
+Next comes another animation setting that really isn't used as far as I can
+tell.  This setting is interpStyleLocked.  Just keep this set to 0.
+</P>
+<P>
+Remember earlier I was talking about spherical blend zones?  Well this next
+setting is what defines this.  I haven't worked with smoothZones very much
+and just leave it to what poser sets this to.  Basically it just describes
+how far the blending should take place when bending a joint.  This also
+needs the bend parameter to be set to 1 in order to have any affect.
+</P>
+<P>
+Next is the angles parameter.  This one is still a mystery to me just a bit
+but I suspect it has a direct relationship to the center point, end point
+and orientation.  I just leave this one alone.
+</P>
+<P>
+The otheractor parameter always follows the smoothzones and tells poser what
+other part it needs to blend.
+</P>
+<P>
+The next few parameters I have seen fairly often but have never seen an
+effect they cause.  These parameters are: matrixActor, flipped, calcWeights,
+doBuldge and jointMult.
+</P>
+<P>
+Next comes the magical valueOpDeltaAdd parameter.  This is where so many
+morphs and controlled parameters are defined.
+</P>
+<P>
+The valueOpDeltaAdd I will go over shortly, for now let's hit the actual
+geometry.  Notice you need the indexes and numbDeltas. Essentially this
+gives the indexes of every vertice in the original geometry and also gives
+the count for the number of changes.  the format of the deltas section
+references this count.
+The deltas section lists every delta to use.  the format is basically in OBJ
+file format.  The d says it is a delta (read as modification)  next comes
+the index (this should match the index values in the original obj file) and
+the next comes the translation.  The translation reference is done in three
+parts because the translation can happen on one of three axis.  The position
+for the vertice indexd determines which axis to adjust.  Read the delta
+changes like this:  d index X Y Z .
+</P>
+<P>
+The valueOpDeltaAdd is where all the JCM magic itself happens. In just these
+few lines major changes can be controlled.  In the morph dial we see this
+section included right before the deltas and it tells us that it is
+controlled by another dial.  The valueOpDeltaAdd tells us a modification
+controlled by something else is going to happen.  The values for
+valueOpDeltaAdd tell us where the controlling dial is.  The first thing it
+tells us is the figure.  The defualts in poser are actually not a good idea
+as you may rename something and the figure might not be named figure 1.
+Always name your figures something unique and use that name here for
+reference.  the next part tells us what joint in the figure to look at and
+the third is what dial in that joint.  These names are the true internal
+names of these parts and dials, not the names given at the name paramter for
+these parts.  With this information we know exactly what dial to read then
+apply the modifier to this dial.  The modifier is listed as deltaAddDelta.
+</P>
+<P>
+A further explantion of this is required so you know why this value is not
+equal to 1.000 like all other variations on this.  In order to actually
+figure out the value to add to the deltaAddDelta parameter we need to do a
+little algebriac math. Do a little addition to find the full range, for
+example if the min is 0 and the max is 12 then the range is 12, if it is -2
+and 12 then the range is 14.  Lets say the Parent range is 12 and the Child
+range is 2, build the equation and solve for x using this formula (x beng
+the unknown deltaAddDelta): 1/Parent Range = x/Child Range.  This would give
+us 1/12 = x/2.  To solve for x we have to multiply both sides by 2 giving us
+2*(1/12) = x.  solving this equation we get the deltaAddDelta value of 0.167
+(always round to the nearest thousandth).  To simplify this we could have
+simply stated: Child Range * (1/Parent Range) = deltaAddDelta.
+</P>
+<P>
+I hope this explantion of the known dials will help some of you.  In part 3
+I will discuss the hierarchy and material mapping in the CR2.
+</P>
+<P>
+</BODY>
+</HTML>

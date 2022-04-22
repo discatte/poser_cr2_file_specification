@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY bgcolor=#000000 text=#ffffff>
+<TABLE align=center>
+<TR align=center>
+<TD>
+Bailing Out Your Boats
+</TD>
+</TR>
+<TR align=center>
+<TD>
+<IMG SRC="BoatStart.jpg">
+</TD>
+</TR>
+<TR align=center>
+<TD>
+After seeing some of the images that my small boat has been in I decided to do a little tutorial on how to get things to look right.  As you can see from the above picture, if you place the boat in the water, Bryce will also have water in the boat.  No way around that at all inside of bryce.
+</TD>
+<TD>
+</TD>
+</TR>
+</TABLE>
+<TABLE align=center>
+<TR align=center>
+<TD>
+First thing to do is to render your image with the boat, just like the above image.
+</TD>
+<TD>
+<IMG SRC="BoatStartSmall.jpg">
+</TD>
+</TR>
+<TR align=center>
+<TD>
+Then, without moving the camera or any lights, we will need to render a mask image.  Now bryce won't mask this properly for us because part of the boat sits below the water and we want the mask to show that.  The way I handle this is to take the water plane and render it in a flat color with the ambience turned al the way up to remove any shadow.  I picked white this time becase it is different enough from the boat itself.
+</TD>
+<TD>
+<IMG SRC="BoatMask.jpg">
+</TD>
+</TR>
+<TR align=center>
+<TD>
+After saving the mask render, I then removed everything but the boat.  The sky color was left at blue because I wanted a color close to what the actual background would be.  In this case the water is a blueish green so blue was close enough.
+</TD>
+<TD>
+<IMG SRC="BoatOnly.jpg">
+</TD>
+</TR>
+<TR align=center>
+<TD>
+I then brought all three images into Paint Shop Pro.  I copied the first image with the water and pasted it as a new image.  I then selected my white mask render, copied it and pasted it over the water render as a new layer.  I did the same thing with the boat only render.
+</TD>
+<TD>
+
+</TD>
+</TR>
+<TR align=center>
+<TD>
+From there, it was easy enough to select the white area outside the boat with a bit of feather to it.  Switching to the boat only layer I deleted the selection.  This removed everything below the waterline on the outside of the boat.
+</TD>
+<TD>
+
+</TD>
+</TR>
+<TR align=center>
+<TD>
+Once that area was removed I had to touch up a few small areas such as the insides of the oar rings and the very edge or the boat image.  I could just erase those areas but being carefull not to get close to the inner part of the boat.  That's the part I really needed.
+</TD>
+<TD>
+
+</TD>
+</TR>
+<TR align=center>
+<TD>
+After all that was cleaned up, I simply hid the mask layer and saved the image.
+</TD>
+<TD>
+<IMG SRC="BoatFinalSmall.jpg">
+</TD>
+</TR>
+</TABLE>
+<TABLE align=center>
+<TR align=center>
+<TD>
+A larger image, compare this to the image at the top.
+</TD>
+</TR>
+<TR align=center>
+<TD>
+<IMG SRC="BoatFinal.jpg">
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
