@@ -8,7 +8,7 @@ Collection of unofficial poser cr2 file format specification documents saved fro
 * Original url (in wayback machine): http://www.kuroyumes-developmentzone.com/poser/poserfilespec/ucr2filespec.html
 * PDF [here](https://github.com/discatte/poser_cr2_file_specification/blob/main/Kuroyume%20-%20Poser%20Unofficial%20CR2%20File%20Spec%20-%20ucr2filespec_dec2004.pdf)
 
-### The Poser Custom Model Maker's Guide
+### Dave Hill's The Poser Custom Model Maker's Guide
 
 The Appendix C Joint Parameters and Appendix D Sphereical Falloff Zones are of interest
 
