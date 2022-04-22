@@ -1,6 +1,8 @@
 # Poser CR2 File Specification
 Collection of unofficial poser cr2 file format specification documents saved from the old web
 
+![wireframestatus](https://github.com/discatte/poser_cr2_file_specification/raw/main/Tutorials.jpg)
+
 ### Kuroyume's Poser Unofficial CR2 File Specification
 
 * Original url (in wayback machine): http://www.kuroyumes-developmentzone.com/poser/poserfilespec/ucr2filespec.html
@@ -15,3 +17,4 @@ The Appendix C Joint Parameters and Appendix D Sphereical Falloff Zones are of i
 
 ### Kattman's CR2 Autopsy
 * Original url (in wayback machine): http://home.carolina.rr.com/kattman/Tutorials.htm
+* 4 HTML Pages [here](https://github.com/discatte/poser_cr2_file_specification)
